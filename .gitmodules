@@ -1,0 +1,3 @@
+[submodule "yukina"]
+	url = https://github.com/WhitePaper233/yukina.git
+	path = yukina
