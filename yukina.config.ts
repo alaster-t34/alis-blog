@@ -33,7 +33,7 @@ const YukinaConfig: Configuration = {
 
   username: "AL1S",
   sign: "WER IST WIE GOTT",
-  avatarUrl: "/alisxingye.jpg",
+  avatarUrl: "/images/alisxingye.jpg",
   socialLinks: [
     {
       icon: "line-md:github-loop",

@@ -1,8 +1,8 @@
 ---
 title: "神经网络架构搜索（NAS）：DARTS：Differentiable Architecture Search"
-published: "2025-07-19T00:00:00.000Z"
+published: 2025-07-19T00:00:00.000Z
 description: ""
-image: "./alis1.jpg"
+image: "src/contents/posts/ArtificialNeuralNeteork/alis1.jpg"
 tags: ["AI", "DARTS", "NAS"]
 category: "AI"
 draft: false
@@ -416,18 +416,18 @@ class Network(nn.Module):
             for i in range(self._steps):  # 处理每个中间节点
                 end = start + i + 2
                 W = weights[start:end]  # 当前节点的所有前驱边
-      
+    
                 # 选择top2边（排除none操作）
                 edges = sorted(range(len(W)), 
                               key=lambda x: -max(W[x][k] for k in range(len(W[x])) 
                                            if k != PRIMITIVES.index('none')))[:2]
-      
+    
                 # 选择每条边的最佳操作
                 for j in edges:
                     k_best = max(range(len(W[j])), 
                                 key=lambda k: W[j][k] if k != PRIMITIVES.index('none') else -float('inf'))
                     gene.append((PRIMITIVES[k_best], j))
-      
+    
                 start = end
             return gene
   
@@ -455,8 +455,6 @@ class Network(nn.Module):
 * 对每个中间节点选择权重最高的两条边
 * 对每条边选择权重最高的操作（排除none操作）
 * 输出拼接节点2-5（索引范围2-5）
-
-
 
 ***model.py***
 
@@ -689,7 +687,6 @@ class NetworkImageNet(nn.Module):
     	return logits, logits_aux
 
 ```
-
 
 ---
 

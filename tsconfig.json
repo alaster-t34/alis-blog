@@ -1,8 +1,5 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
-  "compilerOptions": {
-    "strictNullChecks": true
-  }
+  "include": [".astro/types.d.ts", "**/*", "../astro.config.mjs", "../tailwind.config.mjs", "../yukina.config.ts"],
+  "exclude": ["dist"]
 }
